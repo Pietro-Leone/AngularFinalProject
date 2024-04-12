@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-4">
+
+        <form [formGroup]="UserForm" (ngSubmit)="onSubmit()" class="form-group">
+
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input id="username" class="form-control" type="text" formControlName="username" />
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input id="password" class="form-control" type="password" formControlName="password" />
+                <div *ngIf="isWrongAttempt$ | async" class="form-text text-danger">Login invalid</div>
+            </div>
+
+            <div *ngIf="!user; else EditForm" class="d-flex gap-3">
+                <button class="btn btn-primary" type="submit" [disabled]="UserForm.invalid">
+                    Login
+                </button>
+                <button *ngIf="isWrongAttempt$ | async" class="btn btn-primary" type="button" (click)="signup()">
+                    Signup
+                </button>
+            </div>
+
+            <ng-template #EditForm>
+
+                <div class="mb-3">
+                    <label for="ruolo" class="form-label">Ruolo</label>
+                    <select id="ruolo" class="form-select" formControlName="ruolo">
+                        <option [value]="'Lettore'">Lettore</option>
+                        <option [value]="'Scrittore'">Scrittore</option>
+                    </select>
+                </div>
+
+                <div *ngIf="user?.ruolo === 'Scrittore'" class="mb-3">
+                    <label for="nomePenna" class="form-label">Nome Penna</label>
+                    <input id="nomePenna" class="form-control" type="text" formControlName="nomePenna" />
+                </div>
+
+                <button class="btn btn-primary" type="button" (click)="update()" [disabled]="UserForm.invalid">
+                    Update
+                </button>
+
+            </ng-template>
+
+        </form>
+
+    </div>
+</div>

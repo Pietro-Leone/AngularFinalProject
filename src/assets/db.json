@@ -1,0 +1,28 @@
+{
+  "articles": [
+    {
+      "id": "A001",
+      "titolo": "Lorem",
+      "testo": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum ad aspernatur doloribus quia vero deleniti quidem totam sed, iusto cum praesentium pariatur non dignissimos. Nobis id reprehenderit unde debitis nisi.",
+      "categoria": "Attualità",
+      "autore": "Mario Rossi",
+      "dataCreazione": "2024-04-10",
+      "dataModifica": ""
+    }
+  ],
+  "users": [
+    {
+      "id": "U001",
+      "username": "admin",
+      "password": "admin",
+      "ruolo": "Admin"
+    },
+    {
+      "id": "0f2a",
+      "username": "mario",
+      "password": "1",
+      "ruolo": "Scrittore",
+      "nomePenna": "mario"
+    }
+  ]
+}

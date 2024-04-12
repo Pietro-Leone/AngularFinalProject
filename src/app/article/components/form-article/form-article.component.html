@@ -1,0 +1,29 @@
+<form [formGroup]="FormArticle" (ngSubmit)="onSubmit()">
+    
+    <div class="mb-3">
+        <label for="titolo" class="form-label">Titolo</label>
+        <input type="text" class="form-control" id="titolo" formControlName="titolo">
+    </div>
+    <div class="mb-3">
+        <label for="testo" class="form-label">Testo</label>
+        <textarea class="form-control" id="testo" formControlName="testo"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="categoria" class="form-label">Categoria</label>
+        <input type="text" class="form-control" id="categoria" formControlName="categoria">
+    </div>
+    <div class="mb-3">
+        <label for="autore" class="form-label">Autore</label>
+        <input type="text" class="form-control" id="autore" formControlName="autore">
+    </div>
+    <div class="mb-3">
+        <label for="dataCreazione" class="form-label">Data di creazione</label>
+        <input type="date" class="form-control" id="dataCreazione" formControlName="dataCreazione">
+    </div>
+    <!-- <div class="mb-3">
+        <label for="dataModifica" class="form-label">Data di modifica</label>
+        <input type="date" class="form-control" id="dataModifica" formControlName="dataModifica">
+    </div> -->
+    <button type="submit" class="btn btn-primary">Invia</button>
+
+</form>
